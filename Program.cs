@@ -6,7 +6,11 @@ namespace StringCalculator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Введи выражение:");
+
+            Calculator calculator = new Calculator();
+            calculator.Calculate(Console.ReadLine());
+
             Console.ReadLine();
         }
     }
