@@ -7,12 +7,19 @@ namespace StringCalculator
     class Calculator
     {
         private string expression;
-        private string transformExeption;
+        private Stack<string> transformExeption = new Stack<string>();
         public string Calculate(string originExeption)
         {
             Transform transform = new Transform();
-            transformExeption = transform.PolishNotation(originExeption);
-
+            try
+            {
+                transformExeption = transform.PolishNotation(originExeption);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exeption: " + ex);
+            }      
+            
 
 
             return "";
