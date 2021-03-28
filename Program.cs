@@ -8,8 +8,9 @@ namespace StringCalculator
         {
             Console.WriteLine("Введи выражение:");
             Calculator calculator = new Calculator();
-            calculator.Solution(Console.ReadLine());
+            double rezult = calculator.Solution(Console.ReadLine());
 
+            Console.WriteLine($"Результат: {rezult}");
             Console.ReadLine();
         }
     }

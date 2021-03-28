@@ -12,7 +12,7 @@ namespace StringCalculator
             double rezult;
             Stack<double> operand = new Stack<double>();
 
-            rezult = int.Parse(exeption.Dequeue());
+            operand.Push(double.Parse(exeption.Dequeue()));
             while (exeption.Count > 0)
             {
                 string temp = exeption.Dequeue();
@@ -21,7 +21,7 @@ namespace StringCalculator
                 else
                 {
                     double op1 = operand.Pop();
-                    operand.Push(CalculateTwoOpreands(op1, operand.Pop(), temp));
+                    operand.Push(CalculateTwoOpreands(operand.Pop(), op1, temp));
                 }  
             }
 
