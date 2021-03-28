@@ -4,7 +4,7 @@ using System.Text;
 
 namespace StringCalculator
 {
-    class Validation
+    public class Validation
     {
         public string Check(string exeption)
         {
@@ -16,7 +16,12 @@ namespace StringCalculator
                 return "Вы не ввели выражение";
             }
 
-            for(int i = 0; i < exeption.Length; i++)
+            if ("/*+^".IndexOf(exeption[0]) != -1)
+            {
+                return $"Выражение не может начинатся с оператора {exeption[0]}";
+            }
+
+            for (int i = 0; i < exeption.Length; i++)
             {
                 if ("0123456789/*-+^()".IndexOf(exeption[i]) == -1)
                     return $"Выражение {exeption} содержит недоспустимый символ {exeption[i]}!";
@@ -26,7 +31,7 @@ namespace StringCalculator
                 if(exeption[i] == ')')
                     bracket--;
 
-                if ("/*-+^".IndexOf(exeption) != -1)
+                if ("/*-+^".IndexOf(exeption[i]) != -1)
                 {
                     if (lastCharOper == true)
                         return $"Выражение содержит подряд идущие операторы! {exeption[i - 1]} и {exeption[i]}";

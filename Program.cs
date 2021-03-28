@@ -6,12 +6,20 @@ namespace StringCalculator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введи выражение:");
-            Calculator calculator = new Calculator();
-            double rezult = calculator.Solution(Console.ReadLine());
+            bool exit = false;
+            while (exit == false)
+            {
+                Console.WriteLine("Введи выражение:");
+                Calculator calculator = new Calculator();
+                double rezult = calculator.Solution(Console.ReadLine());
 
-            Console.WriteLine($"Результат: {rezult}");
-            Console.ReadLine();
+                Console.WriteLine($"Результат: {rezult}");
+                Console.WriteLine($"Что бы выйти введите N");
+                if (Console.ReadLine() == "N")
+                    exit = true;
+                else
+                    Console.Clear();
+            }            
         }
     }
 }
