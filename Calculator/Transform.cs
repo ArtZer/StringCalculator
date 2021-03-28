@@ -15,6 +15,7 @@ namespace StringCalculator
             string operand = "";
             List<char> charapters = oroginNotation.ToList();
             char outTemp;
+            bool addMinus = false;
                         
             for(int i =0; i < charapters.Count; i++)
             {
@@ -22,6 +23,11 @@ namespace StringCalculator
                 {
                     while (CheckOperand(charapters[i]))
                     {
+                        if (addMinus)
+                        {
+                            operand += '-';
+                            addMinus = false;
+                        }
                         operand += charapters[i].ToString();
                         i++;
 
@@ -38,6 +44,13 @@ namespace StringCalculator
                 if(charapters[i] == '(')
                 {
                     temp.Push(charapters[i]);
+                    if (charapters[i + 1] == '-')
+                    {
+                        addMinus = true;
+                        i++;
+                        continue;
+                    }
+                        
                 }
                 if (charapters[i] == ')')
                 {
@@ -68,12 +81,14 @@ namespace StringCalculator
                             }
                         }
                     }
-                    temp.Push(charapters[i]);
-                                       
+                    if (charapters[i] == '-' && rezult.Count == 0)
+                        addMinus = true;
+                    else
+                        temp.Push(charapters[i]);                                      
                 }
             }
             
-            for(int i = 0; i < temp.Count; i++)
+            for(int i = 0; i <= temp.Count; i++)
             {
                 rezult.Enqueue(temp.Pop().ToString());
             }

@@ -44,9 +44,11 @@ namespace StringCalculator
                     if (op2 == 0)
                         throw new Exception("Нельзя делить на ноль!");
                     return op1 / op2;
-                    break;
                 case "*": return op1 * op2;
-                case "^": return Math.Pow(op1,op2);
+                case "^": 
+                    if(op1 < 0 || op2 < 0)
+                        return Math.Pow(op1, op2) * -1;
+                    return Math.Pow(op1,op2);
                 default: return 0;
             }
         }

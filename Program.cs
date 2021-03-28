@@ -9,7 +9,7 @@ namespace StringCalculator
             bool exit = false;
             while (exit == false)
             {
-                Console.WriteLine("Введи выражение:");
+                Console.WriteLine("Введите выражение:");
                 Calculator calculator = new Calculator();
                 double rezult = calculator.Solution(Console.ReadLine());
 
