@@ -16,6 +16,9 @@ namespace StringCalculator
                 return "Вы не ввели выражение";
             }
 
+            if ("/*+^-".IndexOf(exeption[exeption.Length-1]) != -1)
+                return $"Выражение не может заканчивваться на оператор!";
+
             if ("/*+^".IndexOf(exeption[0]) != -1)
             {
                 return $"Выражение не может начинатся с оператора {exeption[0]}";

@@ -24,7 +24,6 @@ namespace StringCalculator
                     operand.Push(CalculateTwoOpreands(operand.Pop(), op1, temp));
                 }  
             }
-
             return operand.Pop();
         }
 
