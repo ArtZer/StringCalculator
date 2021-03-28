@@ -24,8 +24,8 @@ namespace StringCalculator
                 }
 
                 transformExeption = transform.PolishNotation(originExeption);
-
                 return calculate.PolishNotation(transformExeption);
+                
             }
             catch (Exception ex)
             {

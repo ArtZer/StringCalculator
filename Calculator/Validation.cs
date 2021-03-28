@@ -21,6 +21,13 @@ namespace StringCalculator
                 return $"Выражение не может начинатся с оператора {exeption[0]}";
             }
 
+            int count = 0;
+            for (int i = 0; i < exeption.Length; i++)
+                if ("0123456789".IndexOf(exeption[i]) != -1)
+                    count++;
+            if (count < 2)
+                return $"Выражение {exeption} должно содержать хотябы два операнда!";
+
             for (int i = 0; i < exeption.Length; i++)
             {
                 if ("0123456789/*-+^()".IndexOf(exeption[i]) == -1)

@@ -14,8 +14,8 @@ namespace StringCalculator
                 double rezult = calculator.Solution(Console.ReadLine());
 
                 Console.WriteLine($"Результат: {rezult}");
-                Console.WriteLine($"Что бы выйти введите N");
-                if (Console.ReadLine() == "N")
+                Console.WriteLine($"Что бы выйти введите в");
+                if (Console.ReadLine() == "в")
                     exit = true;
                 else
                     Console.Clear();
