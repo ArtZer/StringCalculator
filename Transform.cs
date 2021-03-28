@@ -14,7 +14,6 @@ namespace StringCalculator
             Stack<string> rezult = new Stack<string>();
             string operand = "";
             List<char> charapters = oroginNotation.ToList();
-            bool priority = false;
             char outTemp;
                         
             for(int i =0; i < charapters.Count; i++)
@@ -109,6 +108,5 @@ namespace StringCalculator
                 default: return 0;
             }
         }
-
     }
 }
