@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace StringCalculator
 {
-    class Transform
+    public class Transform
     {
         public Queue<string> PolishNotation(string oroginNotation)
         {

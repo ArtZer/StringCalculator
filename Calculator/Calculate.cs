@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace StringCalculator
 {
-    class Calculate
+    public class Calculate
     {
         public double PolishNotation(Queue<string> exeption)
         {
