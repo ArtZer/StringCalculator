@@ -7,9 +7,8 @@ namespace StringCalculator
         static void Main(string[] args)
         {
             Console.WriteLine("Введи выражение:");
-
             Calculator calculator = new Calculator();
-            calculator.Calculate(Console.ReadLine());
+            calculator.Solution(Console.ReadLine());
 
             Console.ReadLine();
         }

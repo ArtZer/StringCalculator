@@ -7,8 +7,8 @@ namespace StringCalculator
     class Calculator
     {
         private string expression;
-        private Stack<string> transformExeption = new Stack<string>();
-        public string Calculate(string originExeption)
+        private Queue<string> transformExeption = new Queue<string>();
+        public string Solution(string originExeption)
         {
             Transform transform = new Transform();
             Validation validation = new Validation();
@@ -27,7 +27,7 @@ namespace StringCalculator
             {
                 Console.WriteLine("Exeption: " + ex);
             }
-            
+                      
 
 
             return "";

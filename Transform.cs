@@ -8,10 +8,10 @@ namespace StringCalculator
 {
     class Transform
     {
-        public Stack<string> PolishNotation(string oroginNotation)
+        public Queue<string> PolishNotation(string oroginNotation)
         {
             Stack<char> temp = new Stack<char>();
-            Stack<string> rezult = new Stack<string>();
+            Queue<string> rezult = new Queue<string>();
             string operand = "";
             List<char> charapters = oroginNotation.ToList();
             char outTemp;
@@ -30,7 +30,7 @@ namespace StringCalculator
                             break;
                         }
                     }
-                    rezult.Push(operand);
+                    rezult.Enqueue(operand);
                     operand = "";
                     i--;
                 }                    
@@ -44,7 +44,7 @@ namespace StringCalculator
                     outTemp = temp.Pop();
                     while(outTemp != '(')
                     {
-                        rezult.Push(outTemp.ToString());
+                        rezult.Enqueue(outTemp.ToString());
                         outTemp = temp.Pop();
                     }
                 }
@@ -57,7 +57,7 @@ namespace StringCalculator
                         {
                             if (Priority(charapters[i])<=Priority(temp.Peek()))
                             {
-                                rezult.Push(temp.Pop().ToString());
+                                rezult.Enqueue(temp.Pop().ToString());
                                 temp.Push(charapters[i]);
                                 continue;
                             }
@@ -75,7 +75,7 @@ namespace StringCalculator
             
             for(int i = 0; i < temp.Count; i++)
             {
-                rezult.Push(temp.Pop().ToString());
+                rezult.Enqueue(temp.Pop().ToString());
             }
 
             return rezult;
